@@ -1,0 +1,221 @@
+
+/* bat dau css silde */
+
+.container {
+    margin-top: 11vh;
+}
+.banner {
+    margin-bottom:2vh;
+}
+.carousel-item img {
+    width: 100%;
+    height: 56vh;
+    display: inline-block;
+}
+
+/* het css slide */
+
+/* bat dau css cho 2 div ben phai  */
+.suggest img {
+    width: 100vh;
+    height: 27vh;
+    display: inline-block;
+}
+
+.suggest .suggest1 {
+    margin-bottom: 1vh;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.suggest .suggest2 {
+    margin-top: 2vh;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.suggest1 .layer2,
+.suggest2 .layer2 {
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0px;
+    background-color: #00000066;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.suggest1:hover .layer2,
+.suggest1:focus .layer2,
+.suggest2:hover .layer2,
+.suggest2:focus .layer2 {
+    opacity: 1;
+    transition: 0.5s;
+    top: 70%;
+}
+
+.suggest .layer2 p {
+    color: white;
+    font-size: 150%;
+}
+
+
+/* het css cho 2 div ben phai  */
+
+
+/*css cho icon top*/
+
+.icon-top i {
+    color: white;
+}
+
+.icon-top .left,
+.icon-top .right {
+    font-size: 200%;
+}
+
+.icon-top .center {
+    font-size: 300%;
+    margin-right: 2vh;
+    margin-left: 2vh;
+}
+
+
+/*het css cho icon top*/
+
+
+/* css cho menu-con */
+
+.menu-con {
+    margin-top: 4vh;
+}
+
+
+/* het css cho menu-con */
+
+
+/* css cho list-mv */
+
+
+.list-mv {
+    margin-top: 2vh;
+}
+
+
+.card {
+    margin-top: 3vh;
+    padding:3vh;
+    background-color: #131419;
+    color: white;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05), 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+.card .img-mv{
+    width: 100%;
+    height: 27vh;
+    box-sizing:border-box;
+    overflow:hidden;
+    position:relative;
+    z-index:0;
+    border-radius:1vh;
+}
+.card .img-mv .layer2{
+    opacity: 0;
+    border-radius:1vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #00000078;
+    transition: 0.4s;
+}
+.img-mv .eye {
+    opacity:0;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 100%;
+    transition: 0.4s;
+}
+.img-mv .eye i{
+    opacity: 1;
+    font-size: 300%;
+    color: white;
+}
+.img-mv .heart {
+    opacity:0;
+    transition:0.4s;
+    position: absolute;
+    top: 0;
+    left: 70%;
+    width: 30%;
+    height: 20%;
+    z-index: 3;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    line-height: 100%;
+    font-size: 2.5vh;
+    padding-top: 3%;
+}
+.img-mv .heart i{
+    font-size: 2.5vh;
+    color:white;
+    margin: 0 8px;
+}
+.card img{
+    transition:0.5s;
+    border-radius:1vh;
+}
+.card:hover img{
+    transform:scale(1.5);
+    transition:0.5s;
+}
+.card:hover .layer2{
+    opacity: 1;
+    transition: 0.4s;
+}
+.card:hover .eye{
+    opacity: 1;
+    transition: 0.4s;
+}
+.card:hover .heart{
+    opacity:1;
+    transition:0.4s;
+}
+
+.card .card-body {
+    width: 100%;
+    height: 18vh;
+}
+.card .card-body .card-title{
+    color:white;
+}
+.card:hover .card-body .card-title{
+    color:#3CE0D0;
+}
+.card .card-body .card-text{
+    font-size:13px;
+}
+
+
+.more {
+    margin-top: 3vh;
+}
+
+
+/* het css cho list-mv */
+
+

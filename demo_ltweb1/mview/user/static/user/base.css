@@ -1,0 +1,173 @@
+
+
+.navbar {
+    transition: 0.5s;
+    background-color: #00000000 !important;
+    text-transform: uppercase;
+}
+
+.scrolled {
+    background-color: #000 !important;
+    transition: 0.5s;
+}
+
+.navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 2rem;
+}
+
+.navbar-light .navbar-nav .active>.nav-link {
+    color: #000000bf !important;
+    background-color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: #000;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.navbar-light .navbar-nav .nav-link.active:hover {
+    color: #000;
+    background-color: #fff;
+}
+
+.navbar-light .navbar-nav .active>.nav-link:hover {
+    color: rgba(0, 0, 0, 1);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, .8);
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+    color: rgba(255, 255, 255, 1);
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:visited {
+    color: rgba(255, 255, 255, 1);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+button.navbar-toggler {
+    background-color: #fff;
+}
+
+.btn-register,
+.btn-login {
+    margin: 0 10px;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+footer {
+    background-color: #131419;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    display: flex;
+}
+
+footer .content-footer {
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.5);
+    border: 2px grey solid;
+    padding-top: 10px;
+    margin-bottom: 5px;
+}
+
+
+/* header cua  footer */
+
+footer .content-footer .text-header {
+    position: absolute;
+    z-index: 1;
+    top: -12px;
+    left: 24px;
+    background-color: #131419;
+    padding: 0 20px;
+}
+
+footer .content-footer .text-header h4 {
+    color: white;
+    font-size: 20px;
+}
+
+
+/* het header cua footer */
+
+
+/* bat dau list icon */
+
+footer .content-footer .icon {
+    padding-top: 15px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+footer .content-footer .icon li {
+    list-style: none;
+    margin: 0 3%;
+}
+
+footer .content-footer .icon li a {
+    color: #fff;
+    font-size: 2em;
+    transition: 0.5s;
+}
+
+footer .content-footer .icon li a:hover {
+    color: #fff;
+}
+
+
+/* het list icon */
+
+
+/* bat dau list thong tin */
+
+footer .content-footer .infor {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+footer .content-footer .infor li {
+    list-style: none;
+    margin: 0 6%;
+    font-size: 18px;
+    color: white;
+}
+
+footer .content-footer .infor li i {
+    margin: 0 10px;
+}
+
+footer .content-footer .copyright {
+    color: white;
+    display: inline-block;
+    font-size: 18px;
+    margin-bottom: 1px;
+    margin-left: 33%;
+}
+
+footer .content-footer .copyright i {
+    margin: 0 10px;
+}

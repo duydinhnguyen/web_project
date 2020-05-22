@@ -1,0 +1,56 @@
+main {
+    margin-top: 14vh;
+}
+
+
+.row {
+    margin-top: 3vh;
+}
+
+.row .text {
+    padding: 2vh;
+    padding-left: 2vh;
+}
+
+.row ul {
+    list-style-type: none;
+}
+
+.row1 img {
+    width: 100%;
+    height: 60vh;
+}
+
+.row1 .text {
+    padding-bottom: 0px !important;
+}
+
+.row3 img,
+.row4 img,
+.row5 img {
+    width: 100%;
+    height: 60vh;
+}
+
+.row2 .text {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.row3 .text {
+    padding-top: 0px !important;
+}
+
+.row4 .text {
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+}
+
+.row5 .text {
+    padding-top: 0px !important;
+}
+
+.div-video {
+    width: 100%;
+    height: 60vh;
+}

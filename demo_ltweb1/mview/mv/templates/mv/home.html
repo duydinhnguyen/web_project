@@ -1,0 +1,263 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Mview</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>-->
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+
+    <link rel="stylesheet" href="{% static 'mv/home.css' %}">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"
+            integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+</head>
+
+<body class="body" data-spy="scroll" data-target=".navbar" data-offset="500">
+
+<header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href=".">Mview</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#mv">review mv</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#famous">người nổi tiếng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#footer">about</a>
+                </li>
+
+
+            </ul>
+            {% if user.is_authenticated %}
+            {% if user.last_name %}
+            <a href="" class="nav-item user ">{{ user.last_name }} {{ user.first_name }}</a>
+            {% else %}
+            <a href="" class="nav-item user ">{{ user.username }}</a>
+            {% endif %}
+            <div class="profile-logout text-center">
+                <div class="up"><i class="fas fa-caret-up"></i></div>
+                <div class="div-profile">
+                    <ul class="m-0">
+                        <li class="li-profile"><a href="">profile</a></li>
+                        <li class="li-logout"><a href="{% url 'user:logout' %}">logout</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+            {% else %}
+            <button class=" nav-item btn-login btn btn-outline-success my-2 my-sm-0 " type="button">
+                <a href="{% url 'user:login' %}">Đăng nhập</a>
+            </button>
+            {% endif %}
+        </div>
+    </nav>
+
+</header>
+
+<div class="jumbotron jumbotron-fluid height100p banner" id="home">
+    <div class="container h100">
+        <div class="content-banner h100">
+            <div>
+                <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0">mview</h1>
+                <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                    Mview là một trang blog chuyên review mv và người nổi tiếng; nhận xét, đánh giá, tóm tắt
+                    nội dung các mv trong nước và quốc tế với cảm nhận cá nhân
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="sec1" id="mv">
+    <div class="container">
+        <div class="row">
+            <div class="offset-sm-2 col-sm-8">
+                <div class="headerText text-center">
+                    <br>
+                    <br>
+                    <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0">Music Video</h2>
+                    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0">là các clip âm nhạc, video âm
+                        nhạc, video ca nhạc. Đây là một dạng phim ngắn kết hợp với âm thanh bài hát cùng hình ảnh
+                        được sản xuất với mục đích nghệ thuật.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for i in "abcdef" %}
+            <div class="col-sm-4 col-xs-12">
+                <div class="mvBox" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <a href="{% url 'mv:detail-mv' %}">
+                        <div class="img-mv">
+                            <img class="img-fluid" src="{% static 'mv/mv.jpg' %}" alt="">
+                            <div class="layer2"></div>
+                            <div class="eye"><i class="far fa-eye"></i></div>
+                            <div class="heart"><i class="far fa-heart"></i>
+                                <p>123</p></div>
+                        </div>
+                    </a>
+                    <div class="content-mvBox">
+                        <h5><a class="title" href="{% url 'mv:detail-mv' %}">Yêu Một Người Tổn Thương Là Sẽ Như Vậy</a>
+                        </h5>
+                        <p>Bùi Anh Tuấn, Dương Quý Tần</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250">
+                <div class="row">
+                    <div class="col-sm-10"></div>
+                    <div class="col-sm-2">
+                        <a href="{% url 'mv:list-mv' %}">Xem thêm ...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sec2" id="famous">
+    <div class="container">
+        <div class="row">
+            <div class="offset-sm-2 col-sm-8">
+                <div class="headerText text-center">
+                    <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">Người nổi tiếng</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for i in "abcdefgh" %}
+            <div class="col-sm-3 col-xs-12">
+                <div class="faBox" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250">
+                    <div class="img-famous">
+                        <img class="img-fluid" src="{% static 'mv/fa.jpg' %}" alt="">
+                    </div>
+                    <div class="content-faBox">
+                        <h5>Bùi Anh Tuấn</h5>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-10"></div>
+                    <div class="col-sm-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                        <a href="">Xem thêm ...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer id="footer">
+    <section class="container">
+        <div class="row">
+            <div class="col-sm-12 col-xs-12">
+                <div class="content-footer">
+                    <div class="text-header">
+                        <h4>Liên hệ</h4>
+                    </div>
+                    <ul class="icon">
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    </ul>
+                    <ul class="infor">
+                        <li><i class="fas fa-mobile-alt"></i>0321659874</li>
+                        <li><i class="fas fa-envelope"></i>123456@gmail.com</li>
+                    </ul>
+                    <div class="copyright"><i class="fas fa-copyright"> </i>2020 NCT Corp. All rights reserved</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+
+<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"-->
+<!--        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"-->
+<!--        crossorigin="anonymous"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<script src="https://kit.fontawesome.com/1010e56f2f.js" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+<!--        script thanh dieu huong-->
+        $(document).scroll(function () {
+            $('.navbar').toggleClass('scrolled', $(this).scrollTop() > $('.navbar').height());
+        });
+
+<!--        script nut dang nhap-->
+         $(document).scroll(function () {
+
+            $('.btn-login').toggleClass('btn-login-display', $(this).scrollTop() > $('.navbar').height());
+        });
+
+<!--        script hover nut dang nhap-->
+        $(document).ready(function(){
+            $(".user").hover(function(){
+                $(".profile-logout").css('display', 'inline-block');
+            }, function(){
+                $(".profile-logout").css('display', 'none');
+            });
+        });
+
+<!--        script cho div-login-parent-->
+        $(document).ready(function(){
+            $(".profile-logout").mouseover(function(){
+                $(this).css('display', 'inline-block')
+            });
+            $(".profile-logout").mouseout(function(){
+                $(this).css('display', 'none')
+            });
+        });
+
+
+
+
+
+</script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+        AOS.init();
+</script>
+
+</body>
+</html>

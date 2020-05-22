@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;500;600;700;800&display=swap');
+* {
+    padding: 0px;
+    margin: 0px;
+    outline: hidden !important;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Baloo Paaji 2', cursive;
+    width: 100%;
+    height: 100%;
+    background-color: #131419;
+    box-sizing: border-box;
+}
+
+body a {
+    text-decoration: none;
+}
+
+body a:hover {
+    text-decoration: none;
+}
+
+.navbar {
+    transition: 0.5s;
+    background-color: #00000000 !important;
+    text-transform: uppercase;
+    background-color: #131419;
+}
+
+.scrolled {
+    background-color: #000 !important;
+    transition: 0.5s;
+}
+
+.navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 2rem;
+}
+
+.navbar-light .navbar-nav .active>.nav-link {
+    color: #000000bf !important;
+    background-color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: #000;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.navbar-light .navbar-nav .nav-link.active:hover {
+    color: #000;
+    background-color: #fff;
+}
+
+.navbar-light .navbar-nav .active>.nav-link:hover {
+    color: rgba(0, 0, 0, 1);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, .8);
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+    color: rgba(255, 255, 255, 1);
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:visited {
+    color: rgba(255, 255, 255, 1);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+button.navbar-toggler {
+    background-color: #fff;
+}
+
+.btn-login {
+    margin-right: 3% !important;
+}
+
+.btn-login-display {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+header .user {
+    color: white;
+    margin-right: 4%;
+}
+
+.profile-logout {
+    display: none;
+    width: 10%;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 87%;
+}
+
+.div-profile {
+    background-color: white;
+    margin-top: -10px;
+    border-radius: 5px;
+    padding: 5%;
+}
+
+.div-profile ul {
+    list-style: none;
+}
+
+.div-profile .li-profile {
+    border-radius: 5px;
+    padding: 5% 10%;
+    border: 2px solid yellow;
+    background-color: yellow;
+}
+
+.div-profile .li-profile:hover,
+.div-profile .li-profile:focus {
+    background-color: pink;
+    border-color: pink
+}
+
+.div-profile .li-logout {
+    padding: 5%;
+    border: 2px solid gray;
+    background-color: gray;
+    border-radius: 5px;
+    margin-top: 5%;
+}
+
+.div-profile .li-logout:hover,
+.div-profile .li-logout:focus {
+    background-color: pink;
+    border-color: pink;
+}
+
+.profile-logout i {
+    color: white;
+    font-size: 25px;
+}
+
+
+
+
+
+/* bat dau footer */
+
+footer {
+    background-color: #131419;
+    width: 100%;
+    display: flex;
+}
+
+footer .content-footer {
+    border: 2px grey solid;
+    padding-top: 10px;
+    margin-bottom: 5px;
+}
+
+
+/* header cua  footer */
+
+footer .content-footer .text-header {
+    position: absolute;
+    z-index: 1;
+    top: -12px;
+    left: 24px;
+    background-color: #131419;
+    padding: 0 20px;
+}
+
+footer .content-footer .text-header h4 {
+    color: white;
+    font-size: 20px;
+}
+
+
+/* het header cua footer */
+
+
+/* bat dau list icon */
+
+footer .content-footer .icon {
+    padding-top: 15px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+footer .content-footer .icon li {
+    list-style: none;
+    margin: 0 3%;
+}
+
+footer .content-footer .icon li a {
+    color: #fff;
+    font-size: 2em;
+    transition: 0.5s;
+}
+
+footer .content-footer .icon li a:hover {
+    color: #fff;
+}
+
+
+/* het list icon */
+
+
+/* bat dau list thong tin */
+
+footer .content-footer .infor {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+footer .content-footer .infor li {
+    list-style: none;
+    margin: 0 6%;
+    font-size: 18px;
+    color: white;
+}
+
+footer .content-footer .infor li i {
+    margin: 0 10px;
+}
+
+footer .content-footer .copyright {
+    color: white;
+    display: inline-block;
+    font-size: 18px;
+    margin-bottom: 1px;
+    margin-left: 33%;
+}
+
+footer .content-footer .copyright i {
+    margin: 0 10px;
+}
+
+
+/* het list thong tin */
+
+
+/* het footer */

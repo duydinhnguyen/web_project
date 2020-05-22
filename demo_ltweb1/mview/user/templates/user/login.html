@@ -1,0 +1,27 @@
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'user/login.css' %}">
+</head>
+<body>
+<form action="" method="post" class="Form">
+    {% csrf_token %}
+    <h1>ĐĂNG NHẬP</h1>
+    {{ form.as_p }}
+
+    <p><input type="submit" value="Đăng nhập"></p>
+    <ul class="auth text-center" >
+        <li><a href="{% url 'user:register' %}">Tạo tài khoản</a></li>
+        <li><a href="{% provider_login_url 'facebook' method='oauth2'%}">Đăng nhập bằng facebook</a></li>
+        <li><a href="{% provider_login_url 'google'%}">Đăng nhập bằng google</a></li>
+    </ul>
+</form>
+
+</body>
+</html>

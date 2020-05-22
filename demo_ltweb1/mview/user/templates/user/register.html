@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Register</title>
+        <link rel="stylesheet" href="{% static 'user/register.css' %}" >
+      </head>
+    <body>
+        <form action="" method="post" class="Form">
+            {% csrf_token %}
+            <h1>TẠO TÀI KHOẢN</h1>
+            {{ form.as_p }}
+            <p><input type="submit" value="Đăng kí"></p>
+        </form>
+    </body>
+</html>

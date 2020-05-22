@@ -1,0 +1,91 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>base</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="{% static 'user/base1.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header style="float:left;">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="#">Mview</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mv">review mv</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#famous">người nổi tiếng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer">about</a>
+                    </li>
+
+
+                </ul>
+                {% if user.is_authenticated %}
+                <a href="" class="nav-item pb-3">{{ user.last_name }} {{ user.first_name }}</a> {% else %}
+                <button class="btn-register btn-register btn btn-outline-success my-2 my-sm-0 nav-item" type="button">
+                        <a href="#">Đăng kí</a>
+                    </button>
+                <button class="btn-login btn-login btn btn-outline-success my-2 my-sm-0 nav-item" type="button">
+                        <a href="{% url 'user:login' %}">Đăng nhập</a>
+                    </button> {% endif %}
+            </div>
+        </nav>
+    </header>
+
+    {% block content %} {% endblock %}
+
+<!--    <footer id="footer">-->
+<!--        <section class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-sm-12">-->
+<!--                    <div class="content-footer">-->
+<!--                        <div class="text-header">-->
+<!--                            <h4>Liên hệ</h4>-->
+<!--                        </div>-->
+<!--                        <ul class="icon">-->
+<!--                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>-->
+<!--                            <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>-->
+<!--                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>-->
+<!--                            <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>-->
+<!--                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>-->
+<!--                        </ul>-->
+<!--                        <ul class="infor">-->
+<!--                            <li><i class="fas fa-mobile-alt"></i>0321659874</li>-->
+<!--                            <li><i class="fas fa-envelope"></i>123456@gmail.com</li>-->
+<!--                        </ul>-->
+<!--                        <div class="copyright"><i class="fas fa-copyright"> </i>2020 NCT Corp. All rights reserved</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
+<!--    </footer>-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>

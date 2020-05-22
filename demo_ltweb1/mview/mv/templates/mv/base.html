@@ -1,0 +1,160 @@
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'mv/base.css' %}">
+    {% block css %}{% endblock %}
+</head>
+
+<body>
+
+<header>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top  scrolled">
+
+
+            <a class="navbar-brand" href="{% url 'mv:home' %}">Mview</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'mv:home' %}">trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'mv:list-mv' %}">review mv</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#famous">người nổi tiếng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer">about</a>
+                    </li>
+
+
+                </ul>
+                {% if user.is_authenticated %}
+                {% if user.last_name %}
+                <a href="" class="nav-item user ">{{ user.last_name }} {{ user.first_name }}</a>
+                {% else %}
+                <a href="" class="nav-item user ">{{ user.username }}</a>
+                {% endif %}
+                <div class="profile-logout text-center">
+                    <div class="up"><i class="fas fa-caret-up"></i></div>
+                    <div class="div-profile">
+                        <ul class="m-0">
+                            <li class="li-profile"><a href="">profile</a></li>
+                            <li class="li-logout"><a href="{% url 'user:logout' %}">logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                {% else %}
+                <button class=" nav-item btn-login btn btn-outline-success my-2 my-sm-0 " type="button">
+                    <a href="{% url 'user:login' %}">Đăng nhập</a>
+                </button>
+                {% endif %}
+            </div>
+        </nav>
+    </div>
+</header>
+
+{% block content %}
+{% endblock %}
+
+<footer id="footer">
+    <section class="container mt-5">
+        <div class="row">
+            <div class="col-sm-12 col-xs-12">
+                <div class="content-footer">
+                    <div class="text-header">
+                        <h4>Liên hệ</h4>
+                    </div>
+                    <ul class="icon">
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    </ul>
+                    <ul class="infor">
+                        <li><i class="fas fa-mobile-alt"></i>0321659874</li>
+                        <li><i class="fas fa-envelope"></i>123456@gmail.com</li>
+                    </ul>
+                    <div class="copyright"><i class="fas fa-copyright"> </i>2020 NCT Corp. All rights reserved</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+
+<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"-->
+<!--        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"-->
+<!--        crossorigin="anonymous"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<script src="https://kit.fontawesome.com/1010e56f2f.js" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+        // <!--        script thanh dieu huong-->
+        // $(document).scroll(function() {
+        //     $('.navbar').toggleClass('scrolled', $(this).scrollTop() > $('.navbar').height());
+        // });
+
+        // <!--        script nut dang nhap-->
+        $(document).scroll(function() {
+
+            $('.btn-login').toggleClass('btn-login-display', $(this).scrollTop() > $('.navbar').height());
+        });
+
+        //<!--        script hover nut dang nhap-->
+        $(document).ready(function() {
+            $(".user").hover(function() {
+                $(".profile-logout").css('display', 'inline-block');
+            }, function() {
+                $(".profile-logout").css('display', 'none');
+            });
+        });
+
+        //<!--        script cho div-login-parent-->
+        $(document).ready(function() {
+            $(".profile-logout").mouseover(function() {
+                $(this).css('display', 'inline-block')
+            });
+            $(".profile-logout").mouseout(function() {
+                $(this).css('display', 'none')
+            });
+        });
+
+</script>
+</body>
+
+</html>

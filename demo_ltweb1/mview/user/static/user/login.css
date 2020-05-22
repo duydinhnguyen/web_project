@@ -1,0 +1,87 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color:#131419;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.Form{
+    width:300px;
+    padding:15px 30px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    background-color:#131419 ;
+    border-radius: 10px;
+    box-shadow: -5px -5px 10px rgba(255,255,255,0.05),
+    5px 5px 15px rgba(0,0,0,0.5);
+}
+
+.Form h1{
+    color:white;
+}
+
+.username, .password {
+
+    margin: 20px auto;
+    border-radius: 30px;
+    display: block;
+    text-align: center;
+    background: none;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    outline:none;
+    width: 200px;
+    color:white;
+    transition: 0.25s;
+}
+
+.username:focus, .password:focus {
+    width: 280px;
+    border-color: #5f27cd;
+}
+
+.Form input[type="submit"]{
+    margin: 20px auto;
+    border-radius: 30px;
+    display: block;
+    text-align: center;
+    background-color: #191919;
+    border: 2px solid #3498db;
+    padding:10px;
+    outline:none;
+    width: 100px;
+    color:white;
+    transition: 0.25s;
+
+}
+
+.Form input[type="submit"]:hover{
+    width: 200px;
+    border-color: #1dd1a1;
+}
+
+.Form label{
+    display:none;
+}
+
+.Form ul{
+    padding:0px;
+    list-style:none;
+    color:white;
+}
+
+.Form .auth li {
+    padding:1% 0px;
+}
+.Form .auth li a{
+    text-decoration:none;
+    color:white;
+}
+.Form .auth li a:hover {
+    color:blue;
+}

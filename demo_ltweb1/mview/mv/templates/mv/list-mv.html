@@ -1,0 +1,142 @@
+{% extends 'mv/base.html' %}
+{% load static %}
+
+{% block title %}Music Video{%endblock%}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'mv/list-mv.css' %}">
+{%endblock%}
+
+{% block content %}
+<main class="">
+    <div class="container">
+        <div class="row banner">
+            <div class="col-sm-8 col-xs-12 slide">
+                <div id="carouselId" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselId" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselId" data-slide-to="1"></li>
+                        <li data-target="#carouselId" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <a href=""><img class="img-fluid" src="{% static 'mv/1.jpg' %}" alt="First slide"></a>
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>Title</h3>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <a href=""><img class="img-fluid" src="{% static 'mv/4.jpg' %}" alt="Second slide"></a>
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>Title</h3>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <a href=""><img class="img-fluid" src="{% static 'mv/5.jpg' %}" alt="Third slide"></a>
+                            <div class="carousel-caption d-none d-md-block">
+                                <h3>Title</h3>
+                                <p>Description</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-6 suggest">
+                <div class="suggest1">
+                    <a href=""><img class="img-fluid" src="{% static 'mv/4.jpg' %}" alt=""></a>
+                    <div class="layer2 text-center">
+                        <p>title</p>
+                    </div>
+                </div>
+                <div class="suggest2">
+                    <a href=""><img class="img-fluid" src="{% static 'mv/2.jpg' %}" alt=""></a>
+                    <div class="layer2 text-center">
+                        <p>title</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row icon-top d-inline text-center">
+            <div class="col-sm-12">
+                <i class="fas fa-angle-double-left left"></i>
+                <i class="fas fa-crown center"></i>
+                <i class="fas fa-angle-double-right right"></i>
+            </div>
+        </div>
+
+        <div class="row menu-con">
+            <div class="col-sm-12 col-xs-12">
+                <nav class="navbar navbar-expand-sm navbar-light bg-light scrolled">
+                    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                            data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavId">
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">HOT <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Mới nhất</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false">Thể loại</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                    <a class="dropdown-item" href="#">Vpop</a>
+                                    <a class="dropdown-item" href="#">Kpop</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row list-mv">
+            {% for i in "abcdef" %}
+            <div class="col-sm-4 col-xs-12">
+                <div class="card text-left">
+                    <div class="img-mv d-block">
+                        <a href="{% url 'mv:detail-mv' %}"><img class="card-img-top img-fluid" src="{% static 'mv/1.jpg' %}" alt=""></a>
+                        <div class="layer2"></div>
+                            <div class="eye"><i class="far fa-eye"></i></div>
+                            <div class="heart"><i class="far fa-heart"></i><p>123</p></div>
+                    </div>
+                    <div class="card-body text-center">
+                        <a href="{% url 'mv:detail-mv' %}"><h4 class="card-title">Review MV Em sẽ là ai mọi người xa laj</h4></a>
+                        <p class="card-text">Bùi Anh Tuấn, Lý Nhã Kỳ</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+        <div class="row more">
+            <div class="col-sm-10 col-xs-9"></div>
+            <div class="col-sm-2 col-xs-3">
+                <a href="">Xem thêm</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
