@@ -133,3 +133,5 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/'
 SITE_ID = 1
+EMAIL_HOST='localhost'
+EMAIL_PORT='1025'
